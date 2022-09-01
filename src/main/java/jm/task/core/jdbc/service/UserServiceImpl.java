@@ -13,26 +13,26 @@ public class UserServiceImpl  extends UserDaoJDBCImpl implements UserService {
     private  final UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
 
     public void createUsersTable() {
-        super.createUsersTable();
+            userDaoJDBC.createUsersTable();
     }
 
     public void dropUsersTable() {
-        super.dropUsersTable();
+        userDaoJDBC.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        super.saveUser(name, lastName, age);
+        userDaoJDBC.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) {
-        super.removeUserById(id);
+        userDaoJDBC.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        return super.getAllUsers();
+        return userDaoJDBC.getAllUsers();
     }
 
     public void cleanUsersTable() {
-        super.cleanUsersTable();
+        userDaoJDBC.cleanUsersTable();
     }
 }

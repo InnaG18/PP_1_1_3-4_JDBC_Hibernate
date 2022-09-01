@@ -16,7 +16,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     public void createUsersTable() {
         String sql = "CREATE TABLE IF NOT EXISTS users(" +
                 "ID BIGINT NOT NULL AUTO_INCREMENT, NAME VARCHAR(100), " +
-                "LASTNAME VARCHAR(100), AGE INT, PRIMARY KEY (ID) )";
+                "LASTNAME VARCHAR(100), AGE TINYINT, PRIMARY KEY (ID) )";
 
         try (Connection connection = Util.getMyConnection();
              Statement stat = connection.createStatement()) {
@@ -24,8 +24,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             stat.executeUpdate(sql);
             System.out.println("Table was created!");
 
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -37,8 +37,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             stat.executeUpdate(sql);
             System.out.println("Table was dropped");
 
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -55,8 +55,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             preStat.executeUpdate();
             System.out.println("User was added!");
 
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -71,8 +71,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             preStat.executeUpdate();
             System.out.println("User was removed!");
 
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -95,8 +95,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
                 userList.add(user);
             }
             System.out.println("List of users is ready!");
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return userList;
     }
@@ -109,8 +109,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
             stat.executeUpdate(sql);
             System.out.println("Table was cleaned!");
 
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
