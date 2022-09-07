@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserServiceImpl  extends UserDaoJDBCImpl implements UserService {
+public class UserServiceImpl implements UserService {
     private  final UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
 
     public void createUsersTable() {
